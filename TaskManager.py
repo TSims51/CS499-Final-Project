@@ -22,5 +22,5 @@ class TaskDB:
     def list_tasks(self):
         for task in self.tasks:
             status = "Completed" if task.completed else "Incomplete"
-            print(task.name, " (", {status}, ") - Due: ", {task.due_date})
+            print(task.name, " (", status, ") - Due: ", task.due_date)
             print("Description: ", task.description, "\n")
