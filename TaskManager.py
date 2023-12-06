@@ -2,7 +2,6 @@
 
 import json
 from datetime import datetime
-from operator import attrgetter
 
 class Task:
     def __init__(self, name, description, due_date):
@@ -31,6 +30,7 @@ class TaskDB:
         for task in self.tasks:
             if task.name == task_name:
                 task.completed = True
+                self.tasks.remove(task)
                 self.save_tasks()
                 print("\nTask", task_name, "marked as completed and removed from the manager!\n")
                 return
